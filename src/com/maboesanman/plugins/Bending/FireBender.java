@@ -6,7 +6,8 @@ public class FireBender implements Element {
 
 	@Override
 	public void leftAttack(Bender who, PlayerInteractEvent event) {
-		event.getPlayer().sendMessage("you're a firebender!");
+		Location loc = event.getPlayer().getEyeLocation().toVector().add(player.getLocation().getDirection().multiply(2)).toLocation(player.getWorld(), player.getLocation().getYaw(), player.getLocation().getPitch());
+		event.getPlayer().getWorld().spawn(loc, Fireball.class);
 	}
 
 	@Override
