@@ -6,6 +6,6 @@ description: Water, Earth, Fire, Air
 commands:
    setelement:
       description: set your bending element.
-      usage: /setelement [water, earth, fire, air] <--choose one
+      usage: /setelement [waterbender, earthbender, firebender, airbender, nonbender] <--choose one
       permission: 
       permission-message: you can't bend that!
