@@ -1,0 +1,11 @@
+main: com.maboesanman.plugins.Bending.Bending
+name: Bending
+version: 0.0
+author: maboesanman
+description: Water, Earth, Fire, Air
+commands:
+   setelement:
+      description: set your bending element.
+      usage: /setelement [water, earth, fire, air] <--choose one
+      permission: 
+      permission-message: you can't bend that!
