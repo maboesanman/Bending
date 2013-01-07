@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 public class AttributeRetriever {
 
 	public static Element getPlayerElement(Player p, Bending myPlugin){
-		String elementString = (String) myPlugin.getConfig().get(p.getName(), "nonbender");
+		String elementString = (String) myPlugin.getConfig().get(p.getName()+".element", "nonbender");
 		Element e;
 		switch (elementString) {
 			case "nonbender":
@@ -33,6 +33,6 @@ public class AttributeRetriever {
 	}
 	public static void setPlayerElement(Player p, Element e, Bending myPlugin){
 		FileConfiguration fileConfig = myPlugin.getConfig();
-		fileConfig.set(p.getName(), e.getElementString());
+		fileConfig.set(p.getName()+".element", e.getElementString());
 	}
 }
