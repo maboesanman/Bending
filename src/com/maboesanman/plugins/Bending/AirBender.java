@@ -6,7 +6,8 @@ public class AirBender implements Element {
 
 	@Override
 	public void leftAttack(Bender who, PlayerInteractEvent event) {
-		event.getPlayer().sendMessage("you're an airbender!");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -32,5 +33,4 @@ public class AirBender implements Element {
 		return "airbender";
 		
 	}
-
 }

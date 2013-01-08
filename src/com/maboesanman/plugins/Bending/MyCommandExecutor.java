@@ -3,6 +3,7 @@ package com.maboesanman.plugins.Bending;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class MyCommandExecutor implements CommandExecutor {
@@ -16,6 +17,7 @@ public class MyCommandExecutor implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("setelement")) {
+			FileConfiguration fileConfig = myPlugin.getConfig();
 			if (!(sender instanceof Player)) {
 				sender.sendMessage("This command can only be run by a player.");
 				return false;
@@ -43,8 +45,31 @@ public class MyCommandExecutor implements CommandExecutor {
 					}
 					
 				} else {
-					sender.sendMessage("incorrect use!! example: /setelement waterbender");
-					return false;
+					if(args.length == 2){
+						if(args[1].equalsIgnoreCase("waterbender")){
+							fileConfig.set(args[0]+".element", "waterbender");
+							return true;
+						}
+						if(args[1].equalsIgnoreCase("earthbender")){
+							fileConfig.set(args[0]+".element", "earthbender");
+							return true;
+						}
+						if(args[1].equalsIgnoreCase("firebender")){
+							fileConfig.set(args[0]+".element", "firebender");
+							return true;
+						}
+						if(args[1].equalsIgnoreCase("airbender")){
+							fileConfig.set(args[0]+".element", "airbender");
+							return true;
+						}
+						if(args[1].equalsIgnoreCase("nonbender")){
+							fileConfig.set(args[0]+".element", "nonbender");
+							return true;
+						}
+					} else {
+						sender.sendMessage("incorrect use!! example: /setelement waterbender");
+						return false;
+					}
 				}
 			}
 		}

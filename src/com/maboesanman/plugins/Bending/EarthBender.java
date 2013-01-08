@@ -61,5 +61,4 @@ public class EarthBender implements Element {
 	public String getElementString() {
 		return "earthbender";
 	}
-
 }

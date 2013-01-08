@@ -8,5 +8,4 @@ public interface Element {
 	public void rightAttack(Bender who, PlayerInteractEvent event);
 	public void leftDefend(Bender who, PlayerInteractEvent event);
 	public void rightDefend(Bender who, PlayerInteractEvent event);
-	
 }
