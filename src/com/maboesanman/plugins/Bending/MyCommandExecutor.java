@@ -1,5 +1,6 @@
 package com.maboesanman.plugins.Bending;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -54,22 +55,27 @@ public class MyCommandExecutor implements CommandExecutor {
 				if(args.length == 1){
 					if(args[0].equalsIgnoreCase("waterbender")){
 						AttributeRetriever.setPlayerElement((Player) sender, new WaterBender(myPlugin), myPlugin);
+						sender.sendMessage("you are now a "+ChatColor.BLUE+"waterbender");
 						return true;
 					}
 					if(args[0].equalsIgnoreCase("earthbender")){
 						AttributeRetriever.setPlayerElement((Player) sender, new EarthBender(myPlugin), myPlugin);
+						sender.sendMessage("you are now an "+ChatColor.GREEN+"earthbender");
 						return true;
 					}
 					if(args[0].equalsIgnoreCase("firebender")){
 						AttributeRetriever.setPlayerElement((Player) sender, new FireBender(myPlugin), myPlugin);
+						sender.sendMessage("you are now a "+ChatColor.RED+"firebender");
 						return true;
 					}
 					if(args[0].equalsIgnoreCase("airbender")){
 						AttributeRetriever.setPlayerElement((Player) sender, new AirBender(myPlugin), myPlugin);
+						sender.sendMessage("you are now an "+ChatColor.GRAY+"airbender");
 						return true;
 					}
 					if(args[0].equalsIgnoreCase("nonbender")){
 						AttributeRetriever.setPlayerElement((Player) sender, new NonBender(), myPlugin);
+						sender.sendMessage("you are now a nonbender");
 						return true;
 					}
 					
