@@ -1,5 +1,7 @@
 # <username>: [element]
+#
 #   acceptable input:
 #    notch:
 #      element: firebender
 #      time_player_can_attack_at 812610000000
+#
