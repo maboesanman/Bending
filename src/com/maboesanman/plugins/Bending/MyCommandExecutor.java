@@ -24,23 +24,23 @@ public class MyCommandExecutor implements CommandExecutor {
 					sender.sendMessage("player non found");
 					return false;
 				} else {
-					if(args[1].equalsIgnoreCase("waterbender")){
+					if(args[1].equalsIgnoreCase("waterbender") || args[1].equalsIgnoreCase("water") || args[1].equalsIgnoreCase("waterbending")){
 						fileConfig.set(args[0]+".element", "waterbender");
 						return true;
 					}
-					if(args[1].equalsIgnoreCase("earthbender")){
+					if(args[1].equalsIgnoreCase("earthbender") || args[1].equalsIgnoreCase("earth") || args[1].equalsIgnoreCase("earthbending")){
 						fileConfig.set(args[0]+".element", "earthbender");
 						return true;
 					}
-					if(args[1].equalsIgnoreCase("firebender")){
+					if(args[1].equalsIgnoreCase("firebender") || args[1].equalsIgnoreCase("fire") || args[1].equalsIgnoreCase("firebending")){
 						fileConfig.set(args[0]+".element", "firebender");
 						return true;
 					}
-					if(args[1].equalsIgnoreCase("airbender")){
+					if(args[1].equalsIgnoreCase("airbender") || args[1].equalsIgnoreCase("air") || args[1].equalsIgnoreCase("airbending")){
 						fileConfig.set(args[0]+".element", "airbender");
 						return true;
 					}
-					if(args[1].equalsIgnoreCase("nonbender")){
+					if(args[1].equalsIgnoreCase("nonbender") || args[1].equalsIgnoreCase("none")){
 						fileConfig.set(args[0]+".element", "nonbender");
 						return true;
 					}
@@ -88,4 +88,3 @@ public class MyCommandExecutor implements CommandExecutor {
 		return false;
 	}
 }
-

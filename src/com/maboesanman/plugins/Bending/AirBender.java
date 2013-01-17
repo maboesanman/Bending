@@ -15,7 +15,9 @@ public class AirBender implements Element {
 	public void leftAttack(Bender who, PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 		if(AttributeRetriever.canPlayerAttack(player, myPlugin)){
-			// TODO fill in action
+			long a = System.currentTimeMillis();
+			boolean bool = ObstructionCheck.canSee(player.getLocation(), player.getLocation().add(player.getLocation().getDirection().multiply(8)));
+			player.sendMessage(String.valueOf(bool) + String.valueOf(System.currentTimeMillis()-a));
 			AttributeRetriever.setPlayerAttackWaitTime(player, Long.valueOf(0), myPlugin);
 		} else {
 			player.sendMessage("cooling down");

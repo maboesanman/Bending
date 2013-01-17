@@ -1,7 +1,10 @@
+// there's an out of bounds error somewhere in here...
+
 package com.maboesanman.plugins.Bending;
 
-import org.apache.commons.lang.ArrayUtils;
+import java.util.Arrays;
 import org.bukkit.Location;
+import org.bukkit.util.Vector;
 
 public class ObstructionCheck {
 
@@ -66,10 +69,21 @@ public class ObstructionCheck {
 				zValues[i] = ((b+i)/(c));
 			}
 		}
-		double[] xyzValues = new double[] {0.0,1.0} + xValues + yValues + zValues;
 		
-//		int[] array1and2 = new int[array1.length + array2.length];
-//		System.arraycopy(array1, 0, array1and2, 0, array1.length);
-//		System.arraycopy(array2, 0, array1and2, array1.length, array2.length);
+		double[] xyzValues = new double[xValues.length + yValues.length + zValues.length + 2];
+		System.arraycopy(xValues, 0, xyzValues, 0, xValues.length);
+		System.arraycopy(yValues, 0, xyzValues, xValues.length, yValues.length);
+		System.arraycopy(zValues, 0, xyzValues, xValues.length + yValues.length, zValues.length);
+		int l = xyzValues.length;
+		xyzValues[l-2] = 0;
+		xyzValues[l-1] = 1;
+		Arrays.sort(xyzValues);
+		Vector vec = loc2.toVector().subtract(loc1.toVector());
+		for(int i=0; 1<l-1;i++){
+			if((loc1.add(vec.multiply((xyzValues[i]+xyzValues[i+1])/2))).getBlock().getTypeId()!=0){
+				return false;
+			}
+		}
+		return true;
 	}
 }
