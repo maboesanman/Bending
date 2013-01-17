@@ -53,27 +53,27 @@ public class MyCommandExecutor implements CommandExecutor {
 				return false;
 			} else {
 				if(args.length == 1){
-					if(args[0].equalsIgnoreCase("waterbender")){
+					if(args[0].equalsIgnoreCase("waterbender") || args[0].equalsIgnoreCase("water") || args[0].equalsIgnoreCase("waterbending")){
 						AttributeRetriever.setPlayerElement((Player) sender, new WaterBender(myPlugin), myPlugin);
 						sender.sendMessage("you are now a "+ChatColor.BLUE+"waterbender");
 						return true;
 					}
-					if(args[0].equalsIgnoreCase("earthbender")){
+					if(args[0].equalsIgnoreCase("earthbender") || args[0].equalsIgnoreCase("earth") || args[0].equalsIgnoreCase("earthbending")){
 						AttributeRetriever.setPlayerElement((Player) sender, new EarthBender(myPlugin), myPlugin);
 						sender.sendMessage("you are now an "+ChatColor.GREEN+"earthbender");
 						return true;
 					}
-					if(args[0].equalsIgnoreCase("firebender")){
+					if(args[0].equalsIgnoreCase("firebender") || args[0].equalsIgnoreCase("fire") || args[0].equalsIgnoreCase("firebending")){
 						AttributeRetriever.setPlayerElement((Player) sender, new FireBender(myPlugin), myPlugin);
 						sender.sendMessage("you are now a "+ChatColor.RED+"firebender");
 						return true;
 					}
-					if(args[0].equalsIgnoreCase("airbender")){
+					if(args[0].equalsIgnoreCase("airbender") || args[0].equalsIgnoreCase("air") || args[0].equalsIgnoreCase("airbending")){
 						AttributeRetriever.setPlayerElement((Player) sender, new AirBender(myPlugin), myPlugin);
 						sender.sendMessage("you are now an "+ChatColor.GRAY+"airbender");
 						return true;
 					}
-					if(args[0].equalsIgnoreCase("nonbender")){
+					if(args[0].equalsIgnoreCase("nonbender") || args[0].equalsIgnoreCase("none")){
 						AttributeRetriever.setPlayerElement((Player) sender, new NonBender(), myPlugin);
 						sender.sendMessage("you are now a nonbender");
 						return true;
@@ -88,3 +88,4 @@ public class MyCommandExecutor implements CommandExecutor {
 		return false;
 	}
 }
+
